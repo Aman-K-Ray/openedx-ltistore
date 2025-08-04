@@ -6,6 +6,8 @@ import os
 import re
 import sys
 from pathlib import Path
+from typing import List
+
 
 from setuptools import find_packages, setup
 
@@ -27,7 +29,7 @@ def get_version(file_path: Path) -> str:
     raise RuntimeError('Unable to find version string.')  # noqa: EM101
 
 
-def load_requirements(*requirements_paths: Path) -> list[str]:  # noqa: C901
+def load_requirements(*requirements_paths: Path) -> List[str]:  # noqa: C901
     """
     Load all requirements from the specified requirements files.
 
