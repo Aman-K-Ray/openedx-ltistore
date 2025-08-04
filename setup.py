@@ -6,6 +6,7 @@ import os
 import re
 import sys
 from pathlib import Path
+from typing import Dict, List
 
 from setuptools import find_packages, setup
 
@@ -27,7 +28,7 @@ def get_version(file_path: Path) -> str:
     raise RuntimeError('Unable to find version string.')  # noqa: EM101
 
 
-def load_requirements(*requirements_paths: Path) -> list[str]:  # noqa: C901
+def load_requirements(*requirements_paths: Path) -> List[str]:  # noqa: C901
     """
     Load all requirements from the specified requirements files.
 
@@ -69,7 +70,7 @@ def load_requirements(*requirements_paths: Path) -> list[str]:  # noqa: C901
 
     def add_version_constraint_or_raise(
         current_line: str,
-        current_requirements: dict[str, str],
+        current_requirements: Dict[str, str],
         add_if_not_present: bool,  # noqa: FBT001
     ):
         regex_match = requirement_line_regex.match(current_line)
