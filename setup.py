@@ -149,7 +149,7 @@ setup(
     include_package_data=True,
     install_requires=load_requirements(Path('requirements/base.in')),
     options={'bdist_wheel': {'universal': True}},
-    python_requires=">=3.11",
+    python_requires=">=3.8",
     license="AGPL 3.0",
     zip_safe=False,
     keywords="Python edx",
