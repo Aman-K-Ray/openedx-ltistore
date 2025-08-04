@@ -6,7 +6,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import List
+from typing import List,Dict
 
 
 from setuptools import find_packages, setup
@@ -71,7 +71,7 @@ def load_requirements(*requirements_paths: Path) -> List[str]:  # noqa: C901
 
     def add_version_constraint_or_raise(
         current_line: str,
-        current_requirements: dict[str, str],
+        current_requirements: Dict[str, str],
         add_if_not_present: bool,  # noqa: FBT001
     ):
         regex_match = requirement_line_regex.match(current_line)
